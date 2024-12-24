@@ -6,3 +6,6 @@ npm i > npx nodemon server.js
 
 frontend:
 npm i > npm run dev
+
+
+MONGO URL ....
