@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.bg-girls {
+    background-image: url("assets/19-12-242-brands-1-girls-min-data.jpg");
+    background-size: cover;
+}
+
+.bg-map {
+    background-image: url("assets/bggg.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-boys {
+    background-image: url("assets/19-12-24-brands-3-girls-min-data2.jpg");
+    background-size: cover;
+}
+
+.marquee__wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    color: #fff;
+    background: linear-gradient(64deg, #43d0ff, #1E3A8A, #60A5FA);
+    padding: 5px 0;
+    animation: gradient 25s ease infinite;
+    background-size: 400% 400%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.stroke__content {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    position: relative;
+}
+
+.stroke__ico {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.stroke__content.img {
+    width: 4.2em;
+}
+
+.stroke__text {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: normal;
+    color: #fff;
+    text-transform: uppercase;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding-right: 0.75rem;
+}
