@@ -6,12 +6,13 @@ import { Form, Input, Button, Alert } from 'antd';
 const LoginPage = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
 
     const handleSubmit = async (values) => {
         const { username, password } = values;
         try {
             // Отправляем запрос на логин
-            const response = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+            const response = await axios.post(`${BASE_URL}/auth/login`, { username, password });
             // Сохраняем токен в localStorage
             localStorage.setItem('token', response.data.token);
             // Перенаправляем на главную страницу после успешного логина

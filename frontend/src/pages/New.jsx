@@ -44,8 +44,8 @@ const New = () => {
 
     return (
         <div>
-            <div className="relative h-[400px] bg-cover bg-center"
-                 style={{backgroundImage: "url('/full-shot-collage-school-kids-uniforms.jpg')"}}>
+            <div className="relative h-[400px] bg-cover bg-top"
+                 style={{backgroundImage: "url('/gallery-top-2.jpg')"}}>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <motion.div
                     className="absolute inset-0 flex justify-center items-center text-center"

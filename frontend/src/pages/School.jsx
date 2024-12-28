@@ -44,8 +44,8 @@ const School = () => {
 
     return (
         <div>
-            <div className="relative h-[400px] bg-cover bg-center"
-                 style={{backgroundImage: "url('/portrait-young-boy-student-school-uniform.jpg')"}}>
+            <div className="relative h-[400px] bg-contain bg-center"
+                 style={{backgroundImage: "url('/gallery-btm-2.jpg')"}}>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <motion.div
                     className="absolute inset-0 flex justify-center items-center text-center"

@@ -95,10 +95,10 @@ function App() {
                                   <span className="font-medium">Телефон:</span> +998 90 123 45 67
                               </li>
                               <li>
-                                  <span className="font-medium">Email:</span> info@istamluxury.com
+                                  <span className="font-medium">Email:</span> burdaluxtextile.gmail.com
                               </li>
                               <li>
-                                  <span className="font-medium">Адрес:</span> Ташкент, ул. Абдурахманова, 15
+                                  <span className="font-medium">Адрес:</span> Бухара, ул. Халклар дустлиги, 100
                               </li>
                           </ul>
                       </div>

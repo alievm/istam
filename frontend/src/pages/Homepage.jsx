@@ -198,7 +198,7 @@ const Homepage = () => {
 
             <div ref={ref4} className="text-center overflow-hidden mb-5">
                 <motion.h1
-                    className="capitalize font-bold text-4xl text-[#39407B]"
+                    className=" font-bold text-4xl text-[#39407B]"
                     variants={headingVariants}
                     initial="hidden"
                     animate={inView4 ? 'visible' : 'hidden'}
@@ -284,12 +284,14 @@ const Homepage = () => {
                 animate={inView ? 'visible' : 'hidden'}
             >
                 <motion.div
-                    className="bg-[#43d0ff] rounded-r-3xl p-3 flex items-center h-[604px] w-[476px]"
+                    className="bg-[#43d0ff] relative rounded-r-3xl p-3 flex items-center h-[604px] w-[476px]"
                     variants={childVariants}
                 >
                     <h1 className="text-white text-[40px] font-bold uppercase">
                         Соберите школьный стиль вместе с нами
                     </h1>
+                    <img className="absolute bottom-0 left-0" src="/cloud-btm.png" />
+                    <img className="absolute top-0 right-0" src="/header-cloud.png" />
                 </motion.div>
 
                 <motion.div
@@ -302,7 +304,18 @@ const Homepage = () => {
                     }}
                     variants={childVariants}
                 >
-                    <img className="absolute" src="/360527584_11452550-min.png" />
+                    <motion.img
+                        className="absolute"
+                        src="/header-boycha.png"
+                        animate={{
+                            rotate: [-5, 5, -5], // Swing left and right
+                        }}
+                        transition={{
+                            duration: 2, // Duration of one complete swing
+                            repeat: Infinity, // Keep swinging indefinitely
+                            ease: "easeInOut", // Smooth swinging motion
+                        }}
+                    />
                     <div
                         className="flex absolute bottom-0 right-0 gap-0.5 items-start px-8 py-3 text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-br-xl">
                         <div>перейти</div>
@@ -324,7 +337,7 @@ const Homepage = () => {
                     }}
                     variants={childVariants}
                 >
-                    <img className="absolute" src="/269366369_11213873-min.png"/>
+                    <img className="absolute mx-auto h-[80%] right-0 left-0" src="/news-3s.png"/>
                     <div
                         className="flex absolute bottom-0 right-0 gap-0.5 items-start px-8 py-3 text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-br-2xl">
                         <div>перейти</div>
@@ -340,12 +353,12 @@ const Homepage = () => {
             <div className="text-center overflow-hidden my-5" ref={ref1}>
                 {/* Animated heading */}
                 <motion.h1
-                    className="capitalize font-bold text-3xl sm:text-4xl text-[#39407B]"
+                    className="font-bold text-3xl sm:text-4xl text-[#39407B]"
                     variants={headingVariants}
                     initial="hidden"
                     animate={inView1 ? 'visible' : 'hidden'}
                 >
-                    НАША КОЛЛЕКЦИЯ
+                    Наша коллекция
                 </motion.h1>
 
                 {/* Animated text */}
@@ -361,72 +374,72 @@ const Homepage = () => {
             </div>
 
 
-            <div className="flex flex-col sm:flex-row justify-between container mx-auto mb-5 mt-10 px-4">
-                <h1 className="capitalize font-bold text-2xl sm:text-3xl text-[#39407B] text-center sm:text-left">
-                    Трендовый выбор для Девочек
-                </h1>
-                <a href="/girls"
-                    className="flex items-center gap-0.5 px-6 py-2.5 text-xs sm:text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-xl mt-4 sm:mt-0"
-                >
-                    <div>пЕРЕЙТИ</div>
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2e530f569e48beff015597b749360e74ec1a3fee4f93391c5e08bab1a227268?placeholderIfAbsent=true&apiKey=0e60d26ffe404316aa35b6241738714a"
-                        className="object-contain shrink-0 w-6 aspect-square"
-                    />
-                </a>
-            </div>
+            {/*<div className="flex flex-col sm:flex-row justify-between container mx-auto mb-5 mt-10 px-4">*/}
+            {/*    <h1 className="capitalize font-bold text-2xl sm:text-3xl text-[#39407B] text-center sm:text-left">*/}
+            {/*        Трендовый выбор для Девочек*/}
+            {/*    </h1>*/}
+            {/*    <a href="/girls"*/}
+            {/*        className="flex items-center gap-0.5 px-6 py-2.5 text-xs sm:text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-xl mt-4 sm:mt-0"*/}
+            {/*    >*/}
+            {/*        <div>пЕРЕЙТИ</div>*/}
+            {/*        <img*/}
+            {/*            loading="lazy"*/}
+            {/*            src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2e530f569e48beff015597b749360e74ec1a3fee4f93391c5e08bab1a227268?placeholderIfAbsent=true&apiKey=0e60d26ffe404316aa35b6241738714a"*/}
+            {/*            className="object-contain shrink-0 w-6 aspect-square"*/}
+            {/*        />*/}
+            {/*    </a>*/}
+            {/*</div>*/}
 
-            <div className="flex flex-wrap justify-center container mx-auto gap-8 px-4" ref={ref2}>
-                <div className="w-[337px] h-[506px] rounded-xl bg-girls">
-                </div>
-                {girlsClothing.slice(0, 3).map((item, index) => (
-                    <motion.div key={item.id}
-                                className="p-4 rounded-lg max-w-[337px] relative"
-                                initial="hidden"
-                                animate={inView2 ? 'visible' : 'hidden'} // Анимация включается только при появлении
-                                variants={itemVariants2}
-                                custom={index}>
-                        <Image
-                            height="337px"
-                            width="337px"
-                            src={`${DIR_URL}${item.imageUrl}`}
-                            alt={item.name}
-                            className="object-cover h-[337px] will-change-auto w-full sm:w-[337px] rounded-md"
-                        />
-                        <span
-                            className="p-1 px-2 rounded bg-white text-[#43D0FF] font-semibold absolute top-6 right-0 text-[12px]">Новинка</span>
-                        <h2 className="text-lg font-semibold text-[#39407B]">{item.name}</h2>
-                        <p className="text-sm text-gray-500">
-                            {item.categoryId.name}
-                        </p>
-                        <div className="flex justify-between items-center">
-                            <div className="flex gap-1 mt-2">
-                                {JSON.parse(item.sizes[0]).map((size) => (
-                                    <span key={size}
-                                          className="uppercase   items-center rounded-md  m-1 text-center p-2 py-1 text-[12px] font-bold text-[#727272] ring-1 ring-inset ring-gray-500/10">
-                                         {size}
-                                    </span>
-                                ))}
-                            </div>
-                            <div className="flex gap-1 mt-4">
-                                {JSON.parse(item.colors[0]).map((color) => (
-                                    <div
-                                        key={color}
-                                        className="w-[14px] h-[14px] rounded-full"
-                                        style={{
-                                            backgroundColor: color,
-                                        }}
-                                    ></div>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+            {/*<div className="flex flex-wrap justify-center container mx-auto gap-8 px-4" ref={ref2}>*/}
+            {/*    <div className="w-[337px] h-[506px] rounded-xl bg-girls">*/}
+            {/*    </div>*/}
+            {/*    {girlsClothing.slice(0, 3).map((item, index) => (*/}
+            {/*        <motion.div key={item.id}*/}
+            {/*                    className="p-4 rounded-lg max-w-[337px] relative"*/}
+            {/*                    initial="hidden"*/}
+            {/*                    animate={inView2 ? 'visible' : 'hidden'} // Анимация включается только при появлении*/}
+            {/*                    variants={itemVariants2}*/}
+            {/*                    custom={index}>*/}
+            {/*            <Image*/}
+            {/*                height="337px"*/}
+            {/*                width="337px"*/}
+            {/*                src={`${DIR_URL}${item.imageUrl}`}*/}
+            {/*                alt={item.name}*/}
+            {/*                className="object-cover h-[337px] will-change-auto w-full sm:w-[337px] rounded-md"*/}
+            {/*            />*/}
+            {/*            <span*/}
+            {/*                className="p-1 px-2 rounded bg-white text-[#43D0FF] font-semibold absolute top-6 right-0 text-[12px]">Новинка</span>*/}
+            {/*            <h2 className="text-lg font-semibold text-[#39407B]">{item.name}</h2>*/}
+            {/*            <p className="text-sm text-gray-500">*/}
+            {/*                {item.categoryId.name}*/}
+            {/*            </p>*/}
+            {/*            <div className="flex justify-between items-center">*/}
+            {/*                <div className="flex gap-1 mt-2">*/}
+            {/*                    {JSON.parse(item.sizes[0]).map((size) => (*/}
+            {/*                        <span key={size}*/}
+            {/*                              className="uppercase   items-center rounded-md  m-1 text-center p-2 py-1 text-[12px] font-bold text-[#727272] ring-1 ring-inset ring-gray-500/10">*/}
+            {/*                             {size}*/}
+            {/*                        </span>*/}
+            {/*                    ))}*/}
+            {/*                </div>*/}
+            {/*                <div className="flex gap-1 mt-4">*/}
+            {/*                    {JSON.parse(item.colors[0]).map((color) => (*/}
+            {/*                        <div*/}
+            {/*                            key={color}*/}
+            {/*                            className="w-[14px] h-[14px] rounded-full"*/}
+            {/*                            style={{*/}
+            {/*                                backgroundColor: color,*/}
+            {/*                            }}*/}
+            {/*                        ></div>*/}
+            {/*                    ))}*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </motion.div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
             <div className="flex flex-col sm:flex-row justify-between container mx-auto mb-5 mt-10 px-4">
-                <h1 className="capitalize font-bold text-2xl sm:text-3xl text-[#39407B] text-center sm:text-left">
-                    Трендовый выбор для Мальчиков
+                <h1 className=" font-bold text-2xl sm:text-3xl text-[#39407B] text-center sm:text-left">
+                    Трендовый выбор для мальчиков
                 </h1>
                 <a href="/boys"
                     className="flex items-center gap-0.5 px-6 py-2.5 text-xs sm:text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-xl mt-4 sm:mt-0"
@@ -491,7 +504,7 @@ const Homepage = () => {
 
             <div ref={ref6} className="text-center overflow-hidden my-5">
                 <motion.h1
-                    className="capitalize font-bold text-3xl sm:text-4xl text-[#39407B]"
+                    className="font-bold text-3xl sm:text-4xl text-[#39407B]"
                     variants={headingVariants}
                     initial="hidden"
                     animate={inView6 ? 'visible' : 'hidden'}
@@ -520,7 +533,7 @@ const Homepage = () => {
 
 
             <div className="flex justify-between container mx-auto mb-5 mt-10">
-                <h1 className="capitalize font-bold text-3xl  text-[#39407B]">Новости и тренды</h1>
+                <h1 className=" font-bold text-3xl  text-[#39407B]">Новости и тренды</h1>
             </div>
 
             {/*News*/}
@@ -540,7 +553,7 @@ const Homepage = () => {
                         />
 
                         {/* Контент поверх изображения */}
-                        <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 lg:p-6">
+                        <div className="absolute inset-0 bg-black/20 flex flex-col justify-end p-4 lg:p-6">
                             <p className="text-[#38bdf8] will-change-transform font-bold text-xs uppercase mb-1">
                                 Новости
                             </p>

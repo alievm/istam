@@ -13,21 +13,21 @@ const HeaderCarousel = () => {
             title: "Istam",
             subtitle: "luxury",
             text: "Мы создаем стильные, удобные и качественные вещи, которые подойдут для любого случая — от веселых прогулок до торжественных мероприятий",
-            image: "/1.png",
+            image: "/subs.png",
         },
         {
             id: 2,
             title: "Istam",
             subtitle: "luxury",
             text: "Пример текста для второго слайда — яркость и стиль для каждого дня",
-            image: "/pngegg 1.png",
+            image: "/news-2.png",
         },
         {
             id: 3,
             title: "Istam",
             subtitle: "luxury",
             text: "Ваш стиль в лучших традициях комфорта и качества",
-            image: "/favpng_childrens-clothing-online-shopping-footwear 1.png",
+            image: "/news-1sx.png",
         },
     ];
 

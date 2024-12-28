@@ -10,7 +10,6 @@ const Navbar = () => {
     const links = [
         { name: "Главная страница", path: "/" },
         { name: "Мальчикам", path: "/boys" },
-        { name: "Девочкам", path: "/girls" },
         { name: "Новинки", path: "/new" },
         { name: "Школа", path: "/school" },
     ];
