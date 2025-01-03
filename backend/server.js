@@ -7,6 +7,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 const newsRoutes = require("./routes/newsRoutes");
+const voteRoutes = require('./routes/voteRoutes');
 const path = require("path");
 dotenv.config();
 const authRoutes = require('./routes/authRoutes');
@@ -23,6 +24,7 @@ app.use("/api/clothing", clothingRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/news", newsRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/votes', voteRoutes);
 
 app.use(errorHandler);
 

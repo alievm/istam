@@ -12,6 +12,7 @@ import SubCategoryForm from "./pages/SubCategoryForm.jsx";
 import News from "./pages/News.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import PrivateRoute from "./guard/PrivateRoute.jsx";
+import VoteList from "./pages/VoteList.jsx";
 
 function App() {
     const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" element={<PrivateRoute element={Dashboard} />} />
               <Route path="/add" element={<PrivateRoute element={ClothingForm} />} />
               <Route path="/categories" element={<PrivateRoute element={CategoryList} />} />
+              <Route path="/votes" element={<PrivateRoute element={VoteList} />} />
               <Route path="/create-category" element={<PrivateRoute element={CategoryForm} />} />
               <Route path="/edit-category/:id" element={<PrivateRoute element={CategoryForm} />} />
               <Route path="/subcategories" element={<PrivateRoute element={SubCategoryList} />} />

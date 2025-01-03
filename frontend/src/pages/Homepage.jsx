@@ -194,7 +194,7 @@ const Homepage = () => {
                             <path fill="#43D0FF"
                                   d="M11.9 5.7h-.2c-.2 1.7-.8 5-2.4 6.7-1.6 1.6-4.9 2.2-6.6 2.3v.2c1.7.2 5 .8 6.6 2.4s2.2 5 2.4 6.7h.2c.1-1.8.7-5 2.3-6.7 1.6-1.6 5-2.2 6.6-2.4v-.2c-1.7-.1-5-.7-6.6-2.3s-2.2-5-2.3-6.7M3.3 0c-.1.6-.3 1.8-.9 2.4s-1.8.8-2.4.9c.6.1 1.8.3 2.4 1 .6.5.8 1.7.9 2.3.1-.6.3-1.8.9-2.4s1.8-.8 2.4-.8v-.1c-.6 0-1.8-.3-2.4-.9S3.4.6 3.3 0m20.2 1h-.2c0 1.1-.4 3.2-1.4 4.2s-3 1.3-4 1.4c-.1 0-.1.1 0 .1 1 .1 3 .5 4 1.5s1.3 3 1.4 4c0 .1.2.1.2 0 0-1 .4-3 1.4-4s3-1.4 4-1.5q.15 0 0 0c-1-.2-3-.5-4-1.5s-1.3-3-1.4-4.1Z"></path>
                         </svg>
-                       <span className="lg:block hidden">Откройте для себя бесконечные возможности!</span>
+                        <span className="lg:block hidden">Откройте для себя бесконечные возможности!</span>
                     </p>
                     <Button type="primary">Каталог</Button>
                 </div>
@@ -576,11 +576,10 @@ const Homepage = () => {
                     <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map"
                             scrolling="no"
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e256a00d6549cc999ea39f9c0feaea8faf2e89c566e04bc47558dafc9efd307&amp;source=constructor"
-                            ></iframe>
+                    ></iframe>
                 </div>
 
             </section>
-
 
 
             <div className="flex justify-between container mx-auto mb-5 mt-10">
@@ -588,47 +587,31 @@ const Homepage = () => {
             </div>
 
             {/*News*/}
-            <div className="grid container mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                {news.slice(0, 5).map((item) => (
-                    <motion.div
-                        key={item._id}
-                        className="relative overflow-hidden rounded-lg bg-gray-800 shadow-lg cursor-pointer hover:shadow-2xl transition-all duration-300"
-                        whileHover={{scale: 1.02}} // Небольшое увеличение
-                        transition={{type: 'spring', stiffness: 200}}
-                    >
-                        {/* Изображение */}
+            <div className="grid container mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {news.slice(0, 4).map((item) => (
+                    <div key={item._id} className="overflow-hidden">
                         <img
                             src={`${DIR_URL}${item.imageUrl}`}
                             alt={`News Image ${item.title}`}
-                            className="w-full object-cover h-48 lg:h-64"
+                            className="w-full object-cover will-change-transform hover:scale-110 transition-transform h-48 lg:h-64"
                         />
 
-                        {/* Контент поверх изображения */}
-                        <div className="absolute inset-0 bg-black/20 flex flex-col justify-end p-4 lg:p-6">
-                            <p className="text-[#38bdf8] will-change-transform font-bold text-xs uppercase mb-1">
-                                Новости
-                            </p>
-                            <h3 className="text-white will-change-transform font-semibold text-lg lg:text-xl mb-2 leading-tight">
-                                {item.title}
-                            </h3>
-                            <div className="text-sm will-change-transform flex items-center text-gray-300">
-                                <IoMdTime size="16"/>
-                                <p className="ml-2 ">{new Date(item.createdAt).toLocaleDateString()}</p>
+                        <div className="main-news__item min-h-[122px] main-event mt-3">
+                            <div className="main-event__dates">
+    <span className="main-event__date">
+        {new Intl.DateTimeFormat('en', {day: '2-digit'}).format(new Date(item.createdAt))}
+    </span>
+                                <span className="text-sm capitalize">
+        {new Intl.DateTimeFormat('ru', {month: 'long'}).format(new Date(item.createdAt))}
+    </span>
+                            </div>
+
+                            <h3 className="main-event__title">{item.title}</h3>
+
+                            <div className="main-news-card__text"><p>{item.content}</p>
                             </div>
                         </div>
-
-                        {/* Скрываемый контент на ховере */}
-                        <motion.div
-                            className="absolute inset-0 bg-[#38bdf8] flex items-center justify-center text-center p-6 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                            initial={{opacity: 0}}
-                            whileHover={{opacity: 1}}
-                            transition={{duration: 0.4, ease: "easeOut"}}
-                        >
-                            <p className="text-white text-sm will-change-transform">
-                                {item.content.length > 50 ? `${item.content.slice(0, 50)}...` : item.content}
-                            </p>
-                        </motion.div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
 

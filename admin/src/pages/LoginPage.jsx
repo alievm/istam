@@ -23,46 +23,66 @@ const LoginPage = () => {
     };
 
     return (
-        <div style={{ maxWidth: 400, margin: '0 auto', padding: '20px' }}>
-            <h2>Login</h2>
-            {error && <Alert message={error} type="error" showIcon style={{ marginBottom: '20px' }} />}
-            <Form
-                name="login_form"
-                onFinish={handleSubmit}
-                initialValues={{
-                    remember: true,
-                }}
-                layout="vertical"
-            >
-                <Form.Item
-                    label="Username"
-                    name="username"
-                    rules={[{ required: true, message: 'Please input your username!' }]}
-                >
-                    <Input
-                        type="text"
-                        placeholder="Enter your username"
-                    />
-                </Form.Item>
 
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[{ required: true, message: 'Please input your password!' }]}
-                >
-                    <Input.Password
-                        placeholder="Enter your password"
-                    />
-                </Form.Item>
+        <div className="font-[sans-serif]">
+            <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
+                <div className="grid md:grid-cols-2 items-center gap-6 max-w-6xl w-full">
+                    <div
+                        className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
+                        <div style={{maxWidth: 400, margin: '0 auto', padding: '20px'}}>
+                            <h2>Login</h2>
+                            {error && <Alert message={error} type="error" showIcon style={{marginBottom: '20px'}}/>}
+                            <Form
+                                name="login_form"
+                                onFinish={handleSubmit}
+                                initialValues={{
+                                    remember: true,
+                                }}
+                                layout="vertical"
+                            >
+                                <Form.Item
+                                    label="Username"
+                                    name="username"
+                                    rules={[{required: true, message: 'Please input your username!'}]}
+                                >
+                                    <Input
+                                        type="text"
+                                        placeholder="Enter your username"
+                                    />
+                                </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" block>
-                        Login
-                    </Button>
-                </Form.Item>
-            </Form>
+                                <Form.Item
+                                    label="Password"
+                                    name="password"
+                                    rules={[{required: true, message: 'Please input your password!'}]}
+                                >
+                                    <Input.Password
+                                        placeholder="Enter your password"
+                                    />
+                                </Form.Item>
+
+                                <Form.Item>
+                                    <Button type="primary" htmlType="submit" block>
+                                        Login
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>
+                    </div>
+                    <div className="max-md:mt-8">
+                        <img
+                            src="/Group.svg"
+                            className="w-full aspect-[71/50] max-md:w-4/5 mx-auto block "
+                            alt="Dining Experience"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-    );
+
+
+    )
+        ;
 };
 
 export default LoginPage;

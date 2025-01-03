@@ -43,6 +43,7 @@ export default function Navbar() {
         { name: 'Категории', href: '/categories' },
         { name: 'Подкатегории', href: '/subcategories' },
         { name: 'Новости', href: '/news' },
+        { name: 'Голосование', href: '/votes' },
         // { name: 'Места', href: '/places' },
         // { name: 'Клиенты', href: '/clients' },
     ];
@@ -57,7 +58,7 @@ export default function Navbar() {
     }
 
     return (
-        <Disclosure as="nav" className="bg-[#0747A6] sticky top-0  ">
+        <Disclosure as="nav" className="bg-[#002d6e] sticky top-0  ">
             <div className="absolute flex top-0 right-[10%]">
                 <img className=" h-16" src='/Vector-2.svg'/>
                 <img className=" h-16" src='/Vector-1.svg'/>
@@ -66,16 +67,7 @@ export default function Navbar() {
             <div className="px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
-                        <div className="flex-shrink-0 flex text-white font-semibold gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-6 w-6">
-                                <rect width="256" height="256" fill="none"></rect>
-                                <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="#fff"
-                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-                                <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="#fff"
-                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-                            </svg>
-                            Istam Luxury
-                        </div>
+                      <img src="/logotip.svg" />
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-center space-x-4">
                                 {navigation.map((item) => (

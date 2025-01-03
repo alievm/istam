@@ -281,15 +281,15 @@ const Dashboard = () => {
                     <Form.Item
                         name="name"
                         label="Название"
-                        rules={[{required: true, message: "Пожалуйста, введите название"}]}
+                        rules={[{ required: true, message: "Пожалуйста, введите название" }]}
                     >
-                        <Input placeholder="Введите название одежды"/>
+                        <Input placeholder="Введите название одежды" />
                     </Form.Item>
 
                     <Form.Item
                         name="categoryId"
                         label="Категория"
-                        rules={[{required: true, message: "Пожалуйста, выберите категорию"}]}
+                        rules={[{ required: true, message: "Пожалуйста, выберите категорию" }]}
                     >
                         <Select placeholder="Выберите категорию">
                             {categories.map((category) => (
@@ -300,7 +300,11 @@ const Dashboard = () => {
                         </Select>
                     </Form.Item>
 
-                    <Form.Item name="subCategoryId" label="Подкатегория">
+                    <Form.Item
+                        name="subCategoryId"
+                        label="Подкатегория"
+                        rules={[{ required: true, message: "Пожалуйста, выберите подкатегорию" }]}
+                    >
                         <Select placeholder="Выберите подкатегорию">
                             {subCategories.map((subCategory) => (
                                 <Option key={subCategory._id} value={subCategory._id}>
@@ -310,15 +314,11 @@ const Dashboard = () => {
                         </Select>
                     </Form.Item>
 
-                    {/*<Form.Item name="sizes" label="Размеры">*/}
-                    {/*    <Select mode="tags" placeholder="Введите размеры (например: S, M, L)" />*/}
-                    {/*</Form.Item>*/}
-
-                    {/*<Form.Item name="colors" label="Цвета">*/}
-                    {/*    <Select mode="tags" placeholder="Введите цвета (например: красный, синий, зеленый)" />*/}
-                    {/*</Form.Item>*/}
-
-                    <Form.Item name="sizes" label="Размеры">
+                    <Form.Item
+                        name="sizes"
+                        label="Размеры"
+                        rules={[{ required: true, message: "Пожалуйста, выберите хотя бы один размер" }]}
+                    >
                         <Select
                             mode="multiple"
                             placeholder="Выберите размеры"
@@ -328,7 +328,6 @@ const Dashboard = () => {
                             {sizeOptions.map((size) => (
                                 <Option key={size.value} value={size.value} label={size.label}>
                                     <div className="flex items-center gap-2">
-                                        {/* Отображаем размеры как текст */}
                                         <span className="px-2 py-1 border rounded-md text-sm">{size.label}</span>
                                     </div>
                                 </Option>
@@ -336,7 +335,11 @@ const Dashboard = () => {
                         </Select>
                     </Form.Item>
 
-                    <Form.Item name="colors" label="Цвета">
+                    <Form.Item
+                        name="colors"
+                        label="Цвета"
+                        rules={[{ required: true, message: "Пожалуйста, выберите хотя бы один цвет" }]}
+                    >
                         <Select
                             mode="multiple"
                             placeholder="Выберите цвета"
@@ -346,15 +349,15 @@ const Dashboard = () => {
                             {colorOptions.map((color) => (
                                 <Option key={color.value} value={color.value} label={color.label}>
                                     <div className="flex items-center gap-2">
-              <span
-                  style={{
-                      display: 'inline-block',
-                      width: 12,
-                      height: 12,
-                      borderRadius: '50%',
-                      backgroundColor: color.value,
-                  }}
-              />
+                            <span
+                                style={{
+                                    display: 'inline-block',
+                                    width: 12,
+                                    height: 12,
+                                    borderRadius: '50%',
+                                    backgroundColor: color.value,
+                                }}
+                            />
                                         {color.label}
                                     </div>
                                 </Option>
@@ -366,7 +369,11 @@ const Dashboard = () => {
                         <Switch />
                     </Form.Item>
 
-                    <Form.Item name="imageUrl" label="Загрузить изображение">
+                    <Form.Item
+                        name="imageUrl"
+                        label="Загрузить изображение"
+                        rules={[{ required: true, message: "Пожалуйста, загрузите изображение" }]}
+                    >
                         <Upload
                             listType="picture-card"
                             fileList={fileList}
@@ -383,8 +390,6 @@ const Dashboard = () => {
                         </Upload>
                     </Form.Item>
 
-
-
                     <Form.Item>
                         <Button type="primary" htmlType="submit" block>
                             Сохранить
@@ -392,6 +397,7 @@ const Dashboard = () => {
                     </Form.Item>
                 </Form>
             </Modal>
+
         </div>
     );
 };
