@@ -10,47 +10,15 @@ import Marquee from "react-fast-marquee";
 import School from "./pages/School.jsx";
 import {FaEnvelope, FaMapMarkerAlt, FaPhoneAlt} from "react-icons/fa";
 import {FaFacebook, FaInstagram, FaTwitter} from "react-icons/fa6";
+import {HiXMark} from "react-icons/hi2";
+import CarouselBanner from "./components/CarouselBanner.jsx";
 
 
 function App() {
 
   return (
       <BrowserRouter>
-          <Marquee className="marquee__wrap">
-              <div className="stroke__content">
-                  <p className="stroke__text">Откройте для себя стильную и удобную детскую одежду!</p>
-              </div>
-              <div className="stroke__content img">
-                  <img src="/emoji.png" alt="wind" className="stroke__ico"/>
-              </div>
-              <div className="stroke__content">
-                  <p className="stroke__text">Наши коллекции - это гармония комфорта и модных тенденций для ваших
-                      детей.</p>
-              </div>
-              <div className="stroke__content img">
-                  <img src="/emoji.png" alt="wind" className="stroke__ico"/>
-              </div>
-              <div className="stroke__content">
-                  <p className="stroke__text">Только лучшие материалы для ваших малышей, безопасные и приятные на
-                      ощупь.</p>
-              </div>
-              <div className="stroke__content img">
-                  <img src="/emoji.png" alt="wind" className="stroke__ico"/>
-              </div>
-              <div className="stroke__content">
-                  <p className="stroke__text">Доступные цены и уникальные предложения на каждую коллекцию!</p>
-              </div>
-              <div className="stroke__content img">
-                  <img src="/emoji.png" alt="wind" className="stroke__ico"/>
-              </div>
-              <div className="stroke__content">
-                  <p className="stroke__text">Свежие новинки каждый сезон - следите за нашими обновлениями!</p>
-              </div>
-              <div className="stroke__content img">
-                  <img src="/emoji.png" alt="wind" className="stroke__ico"/>
-              </div>
-          </Marquee>
-
+          <CarouselBanner/>
           <Navbar/>
           <Routes>
               <Route path="/" element={<Homepage/>}/>
@@ -70,22 +38,22 @@ function App() {
                               клиентов.
                           </p>
                           <div className="flex pt-5 space-x-4">
-                          {/* Facebook Icon */}
-                          <a href="#" className="text-blue-500 hover:text-blue-400 transition duration-300">
-                              <FaFacebook size={24} />
-                          </a>
+                              {/* Facebook Icon */}
+                              <a href="#" className="text-blue-500 hover:text-blue-400 transition duration-300">
+                                  <FaFacebook size={24}/>
+                              </a>
 
-                          {/* Instagram Icon */}
-                          <a href="#" className="text-pink-500 hover:text-pink-400 transition duration-300">
-                              <FaInstagram size={24} />
-                          </a>
+                              {/* Instagram Icon */}
+                              <a href="#" className="text-pink-500 hover:text-pink-400 transition duration-300">
+                                  <FaInstagram size={24}/>
+                              </a>
 
-                          {/* Twitter Icon */}
-                          <a href="#" className="text-white hover:text-gray-200 transition duration-300">
-                              <FaTwitter size={24} />
-                          </a>
+                              {/* Twitter Icon */}
+                              <a href="#" className="text-white hover:text-gray-200 transition duration-300">
+                                  <FaTwitter size={24}/>
+                              </a>
+                          </div>
                       </div>
-              </div>
 
                       {/* Contact Info */}
                       <div>

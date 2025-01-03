@@ -5,6 +5,8 @@ import {Button, Image} from "antd";
 import {motion, useInView} from "framer-motion";
 import {fetchNews} from "../services/newsService.jsx";
 import {IoMdTime} from "react-icons/io";
+import {HiXMark} from "react-icons/hi2";
+
 const DIR_URL = import.meta.env.VITE_DIRECTORY_URL;
 
 const Homepage = () => {
@@ -158,6 +160,52 @@ const Homepage = () => {
 
     return (
         <div>
+            <div
+                className="relative isolate flex items-center gap-x-6 overflow-hidden bg-white px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
+            >
+                <div
+                    aria-hidden="true"
+                    className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+                >
+                    <div
+                        style={{
+                            clipPath:
+                                'polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)',
+                        }}
+                        className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#43D0FF] to-[#43D0FF] opacity-50"
+                    />
+                </div>
+                <div
+                    aria-hidden="true"
+                    className="absolute left-[max(45rem,calc(50%+8rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+                >
+                    <div
+                        style={{
+                            clipPath:
+                                'polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)',
+                        }}
+                        className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#43D0FF] to-[#43D0FF] opacity-50"
+                    />
+                </div>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <p className="text-sm/6  flex items-center gap-3 text-gray-900">
+                        <strong className="font-semibold">Добро пожаловать!</strong>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="24" fill="none" viewBox="0 0 29 24">
+                            <path fill="#43D0FF"
+                                  d="M11.9 5.7h-.2c-.2 1.7-.8 5-2.4 6.7-1.6 1.6-4.9 2.2-6.6 2.3v.2c1.7.2 5 .8 6.6 2.4s2.2 5 2.4 6.7h.2c.1-1.8.7-5 2.3-6.7 1.6-1.6 5-2.2 6.6-2.4v-.2c-1.7-.1-5-.7-6.6-2.3s-2.2-5-2.3-6.7M3.3 0c-.1.6-.3 1.8-.9 2.4s-1.8.8-2.4.9c.6.1 1.8.3 2.4 1 .6.5.8 1.7.9 2.3.1-.6.3-1.8.9-2.4s1.8-.8 2.4-.8v-.1c-.6 0-1.8-.3-2.4-.9S3.4.6 3.3 0m20.2 1h-.2c0 1.1-.4 3.2-1.4 4.2s-3 1.3-4 1.4c-.1 0-.1.1 0 .1 1 .1 3 .5 4 1.5s1.3 3 1.4 4c0 .1.2.1.2 0 0-1 .4-3 1.4-4s3-1.4 4-1.5q.15 0 0 0c-1-.2-3-.5-4-1.5s-1.3-3-1.4-4.1Z"></path>
+                        </svg>
+                       <span className="lg:block hidden">Откройте для себя бесконечные возможности!</span>
+                    </p>
+                    <Button type="primary">Каталог</Button>
+                </div>
+                <div className="flex flex-1 justify-end">
+                    <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+                        <span className="sr-only">Dismiss</span>
+                        <HiXMark aria-hidden="true" className="size-5 text-gray-900"/>
+                    </button>
+                </div>
+            </div>
+
             <HeaderCarousel/>
 
             <motion.div
@@ -290,8 +338,8 @@ const Homepage = () => {
                     <h1 className="text-white text-[40px] font-bold uppercase">
                         Соберите школьный стиль вместе с нами
                     </h1>
-                    <img className="absolute bottom-0 left-0" src="/cloud-btm.png" />
-                    <img className="absolute top-0 right-0" src="/header-cloud.png" />
+                    <img className="absolute bottom-0 left-0" src="/cloud-btm.png"/>
+                    <img className="absolute top-0 right-0" src="/header-cloud.png"/>
                 </motion.div>
 
                 <motion.div
@@ -306,7 +354,7 @@ const Homepage = () => {
                 >
                     <motion.img
                         className="absolute"
-                        src="/header-boycha.png"
+                        src="/school-boy-isolated_23-2151852975-removebg-preview.png"
                         animate={{
                             rotate: [-5, 5, -5], // Swing left and right
                         }}
@@ -337,7 +385,7 @@ const Homepage = () => {
                     }}
                     variants={childVariants}
                 >
-                    <img className="absolute mx-auto h-[80%] right-0 left-0" src="/news-3s.png"/>
+                    <img className="absolute mx-auto h-[80%] right-0 left-0" src="/360527584_11452550.png"/>
                     <div
                         className="flex absolute bottom-0 right-0 gap-0.5 items-start px-8 py-3 text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-br-2xl">
                         <div>перейти</div>
@@ -442,7 +490,7 @@ const Homepage = () => {
                     Трендовый выбор для мальчиков
                 </h1>
                 <a href="/boys"
-                    className="flex items-center gap-0.5 px-6 py-2.5 text-xs sm:text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-xl mt-4 sm:mt-0"
+                   className="flex items-center gap-0.5 px-6 py-2.5 text-xs sm:text-sm font-semibold tracking-normal text-white uppercase whitespace-nowrap bg-sky-400 rounded-xl mt-4 sm:mt-0"
                 >
                     <div>пЕРЕЙТИ</div>
                     <img
@@ -523,13 +571,16 @@ const Homepage = () => {
                 </motion.h1>
             </div>
 
-            <div className="bg-map p-5 sm:p-10 mb-5">
-                <iframe
-                    className="mx-auto border-4 border-white w-full sm:w-[750px] h-[250px] sm:h-[400px]"
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e256a00d6549cc999ea39f9c0feaea8faf2e89c566e04bc47558dafc9efd307&amp;source=constructor"
-                    frameBorder="0"
-                ></iframe>
-            </div>
+            <section className="text-gray-700 h-[50vh] body-font relative">
+                <div className="absolute inset-0 bg-gray-300">
+                    <iframe width="100%" height="100%" frameBorder="0" marginHeight="0" marginWidth="0" title="map"
+                            scrolling="no"
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e256a00d6549cc999ea39f9c0feaea8faf2e89c566e04bc47558dafc9efd307&amp;source=constructor"
+                            ></iframe>
+                </div>
+
+            </section>
+
 
 
             <div className="flex justify-between container mx-auto mb-5 mt-10">

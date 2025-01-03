@@ -13,21 +13,21 @@ const HeaderCarousel = () => {
             title: "Istam",
             subtitle: "luxury",
             text: "Мы создаем стильные, удобные и качественные вещи, которые подойдут для любого случая — от веселых прогулок до торжественных мероприятий",
-            image: "/subs.png",
+            image: "/1.png",
         },
         {
             id: 2,
             title: "Istam",
             subtitle: "luxury",
             text: "Пример текста для второго слайда — яркость и стиль для каждого дня",
-            image: "/news-2.png",
+            image: "/about-photo2.png",
         },
         {
             id: 3,
             title: "Istam",
             subtitle: "luxury",
             text: "Ваш стиль в лучших традициях комфорта и качества",
-            image: "/news-1sx.png",
+            image: "/Untitled-design-32.png",
         },
     ];
 
@@ -67,15 +67,15 @@ const HeaderCarousel = () => {
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
                     <motion.img
-                        src="/lux.svg"
+                        src="/logoo.svg"
                         className="w-[75%]"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                     />
-                    <p className="text-gray-600 text-lg max-w-xl self-start text-center lg:text-left ml-0 lg:ml-32 px-10">
-                        {slides[currentIndex].text}
-                    </p>
+                    {/*<p className="text-gray-600 text-lg max-w-xl self-start text-center lg:text-left ml-0 lg:ml-32 px-10">*/}
+                    {/*    {slides[currentIndex].text}*/}
+                    {/*</p>*/}
                     <motion.img
                         src={slides[currentIndex].image}
                         alt={slides[currentIndex].title}
@@ -84,21 +84,21 @@ const HeaderCarousel = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     />
-                    <motion.div
-                        className="self-start ml-0 lg:ml-40 mt-4"
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.5, duration: 0.6 }}
-                    >
-                        <Link to="/new">
-                        <Button
-                            className=" px-7 py-5"
-                            type="primary"
-                        >
-                            КАТАЛОГ
-                        </Button>
-                        </Link>
-                    </motion.div>
+                    {/*<motion.div*/}
+                    {/*    className="self-start ml-0 lg:ml-40 mt-4"*/}
+                    {/*    initial={{ y: 20, opacity: 0 }}*/}
+                    {/*    animate={{ y: 0, opacity: 1 }}*/}
+                    {/*    transition={{ delay: 0.5, duration: 0.6 }}*/}
+                    {/*>*/}
+                    {/*    <Link to="/new">*/}
+                    {/*    <Button*/}
+                    {/*        className=" px-7 py-5"*/}
+                    {/*        type="primary"*/}
+                    {/*    >*/}
+                    {/*        КАТАЛОГ*/}
+                    {/*    </Button>*/}
+                    {/*    </Link>*/}
+                    {/*</motion.div>*/}
                 </motion.div>
             </AnimatePresence>
 
